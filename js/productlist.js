@@ -18,6 +18,7 @@ function onDeviceReady() {
 		
     uuid=device.uuid;
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
+	alert($('.shoppingcart').attr('href'));
 	$('.cust_id').val(uuid);
 }
  
