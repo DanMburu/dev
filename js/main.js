@@ -61,6 +61,7 @@ $(document).ready(function(e){
 
 });
 function load(url){
+	alert(url);
 	//$("#results").fadeOut(100);
 	$('.overlay').show();
 	//$('#productlist').fadeOut();

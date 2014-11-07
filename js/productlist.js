@@ -80,7 +80,7 @@ function registration_error(tx, error) {
 function check_success(tx, results) {
 	 var len = results.rows.length;
 	 if(len==0){
-		$('#top').hide();
+		//$('#top').hide();
 		$('.lnkgateway').click(); 
 	 }else{
 		 $('#top').slideDown();
