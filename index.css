@@ -1,0 +1,105 @@
+#results{display:block;}
+.dateseparator {
+  float: left;
+  width: 33%;
+  text-align:center;
+}
+.dateseparator span {
+  color: #9ba238;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+.confirmage {
+  color: #9ba238;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+ 
+ .dateseparator input, .dateseparator select {
+  background: none repeat scroll 0 0 #9ba238;
+  border: medium none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
+  width: 75%;
+} 
+.contentholder {
+  background: url("res/bginner.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid;
+  float: left;
+  margin-top: 21px;
+  padding: 20px 0;
+  width: 100%;
+}
+.logincontrols {
+  float: left;
+  margin-top: 20px;
+  text-align: center;
+}
+.logincontrols a {
+  float: left;
+  margin: 8px auto;
+  width: 100%;
+}
+.logincontrols img {
+  max-width: 70%;
+}
+.disclaimer {
+  color: #fff;
+  float: left;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+}
+a{color:#9BA238}
+h1, h2, h3, h4, h5, h6{color:#fff;}
+.disclaimer a {
+	color:#9BA238;
+}
+.well {
+  background: url("res/bginner.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 14px;
+}
+.productcont{
+   background: url("res/bginner.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 14px;
+  margin-top:20px;
+}
+legend{color:#fff;}
+.hidden{display:none !important}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.confirmage {
+  color: #9ba238;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+.disclaimer {
+  color: #fff;
+  float: left;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+}
