@@ -38,7 +38,7 @@ img {
 }
 
 .overlay {
-	background: none repeat scroll 0 0 #fff;
+	background: none repeat scroll 0 0 #000;
 	height: 100%;
 	opacity: 0.9;
 	position: fixed;
