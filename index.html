@@ -24,8 +24,9 @@ function onDeviceReady() {
 	//}
    // else
    // db.transaction(populateDB, transaction_error, populateDB_success);
-	alert('ready');	
-   var uuid=device.uuid;
+	alert('ready');
+	var uuid='';	
+   //var uuid=device.uuid;
 	alert('two');
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
 	alert(uuid);
@@ -33,7 +34,7 @@ function onDeviceReady() {
 	$('.cust_id').val(uuid);
 }
 </script>
-<!--<script src="res/bootstrap.js"></script>
+<script src="res/bootstrap.js"></script>
 <link href="res/bootstrap.css" rel="stylesheet" media="screen">
 <link href="res/stylesheet.css" rel="stylesheet">
 <script type="text/javascript" src="js/main.js"></script>
@@ -42,7 +43,7 @@ function onDeviceReady() {
 <link href="SpryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="SpryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="SpryAssets/jquery.ui.dialog.min.css" rel="stylesheet" type="text/css">
-<link href="SpryAssets/jquery.ui.resizable.min.css" rel="stylesheet" type="text/css">-->
+<link href="SpryAssets/jquery.ui.resizable.min.css" rel="stylesheet" type="text/css">
 </head> 
 <body> 
  Loading...two
