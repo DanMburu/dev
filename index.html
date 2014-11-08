@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <title>Deliva</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link href="jquery-mobile/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 <script src="jquery-mobile/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>-->
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
 
-<!--<script src="cordova.js" type="text/javascript"></script>-->
-<script src="phonegap.js" type="text/javascript"></script>
-<!--<script type="text/javascript" src="js/productlist.js"></script>-->
+<script src="cordova.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="js/productlist.js"></script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -23,7 +23,7 @@ alert('ready');
    // 	db.transaction(getEmployees, transaction_error);
 	//}
    // else
-    //db.transaction(populateDB, transaction_error, populateDB_success);
+    db.transaction(populateDB, transaction_error, populateDB_success);
 		
     uuid=device.uuid;
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
@@ -32,7 +32,7 @@ alert('ready');
 	$('.cust_id').val(uuid);
 }
 </script>
-<!--<script src="res/bootstrap.js"></script>
+<script src="res/bootstrap.js"></script>
 <link href="res/bootstrap.css" rel="stylesheet" media="screen">
 <link href="res/stylesheet.css" rel="stylesheet">
 <script type="text/javascript" src="js/main.js"></script>
@@ -41,10 +41,255 @@ alert('ready');
 <link href="SpryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="SpryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="SpryAssets/jquery.ui.dialog.min.css" rel="stylesheet" type="text/css">
-<link href="SpryAssets/jquery.ui.resizable.min.css" rel="stylesheet" type="text/css">-->
+<link href="SpryAssets/jquery.ui.resizable.min.css" rel="stylesheet" type="text/css">
 </head> 
 <body> 
-  loaded but ready?
+   <div class="overlay">  
+    <div class="loader">
+        <img src="images/ajaxloader.gif" />
+        <label style="font-size: 16px;font-weight: bold;overflow: hidden;position: relative;top:10px;width: 80px;;">
+            Loading
+        </label>
+    </div>
+ </div> <!-- overlay -->
+<div id="Dialog1">Content for New Dialog Goes Here</div>
+<nav id="top">
+        <ul class="left">
+            <li>
+                <a class="home" data-transition="slidedown" href="#page"><img src="img/home.png"></a>
+            </li>
+            <li>
+                <a class="back" href="#" onclick="window.history.back()"><img src="img/back.png"></a>
+            </li>
+        </ul>
+        <ul class="right">
+            <li>
+                <a class="shoppingcart" data-role="none" href=""><img src="img/cart.png"></a>
+                <a class="shoppingcartshow" data-transition="slide" href="#page3"></a>
+            </li>
+            <li>
+                <a class="exit" href="#"><img src="img/exit.png"></a>
+            </li>
+        </ul>
+    </nav>
+  <div class="container">  
+    <header>
+       
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="logo">
+                        <a href="category.html"><img src="img/logo.png" title="Deliva" alt="Deliva" class="img-responsive"></a>
+                    </div>
+                </div>
+                
+            </div>
+       
+    </header>
+    <hr>
+<div data-role="page" id="page">
+	<div data-role="content">	
+		
+                <div class="row">
+                    <div id="content" class="col-sm-9">
+                        
+                        <div id="productlist">
+						</div><!-- productlist -->
+                       
+                    </div>
+                </div>
+            </div>	
+	
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="content">	
+    <h1 id="prodname"></h1>
+      <div id="productlist" class="productcont">
+      
+                        <div class="col-sm-8">
+                         
+                            <ul class="thumbnails">
+                                <li class="image-additional">
+                                    <a class="thumbnail" title="Bell's"><img id="thumb" src=""></a>
+                                </li>
+                            </ul>
+                            <div id="product">
+                            <form id="frmProduct">
+                                <div class="form-group required">
+                                    <label class="control-label">
+                                        Options
+                                    </label>
+                                    <div id="input-options">
+                                        
+                                        
+                                    </div>
+                                   
+                                </div>
+                                <div id="inputquantity" class="form-group">
+                                    <label class="control-label" for="input-quantity">
+                                        Qty
+                                    </label>
+                                    <input name="quantity" data-role="none" value="1" size="2" id="input-quantity" class="form-control" type="text">
+                                    <input name="product_id" id="product_id" value="" type="hidden">
+                                    <input name="cust_id" id="customer_id" class="cust_id"  value="" type="hidden">
+                                    <br>
+                                    <button type="button" data-role="none"  id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </form>
+                            </div>
+                            
+                             <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab-description" data-toggle="tab">Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-review" data-toggle="tab">Reviews (0)</a>
+                                    </li>
+                                </ul>
+                            
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab-description">
+                                    tab-description
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+      <!-- productlist -->
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="content">	
+		 <div id="results" class="row"></div>
+	</div>
+</div>
+<div data-role="page" id="checkout">
+	<div data-role="content">
+    <h2>Shipping Details</h2>
+     <form id="frmcheckout">
+	  <div data-role="fieldcontain">
+	    <label for="textinput">Contact Person:</label>
+	    <input type="text" name="contactperson" id="textinput" value=""  required />
+      </div>
+	  <div data-role="fieldcontain">
+	    <label for="textinput2">Contact Phone:</label>
+	    <input type="text" name="contactphone" id="textinput2" value=""  required />
+      </div>
+	  <div data-role="fieldcontain">
+	    <label for="textarea">Address Description:</label>
+	    <textarea cols="40" rows="8" name="address" id="textarea" required></textarea>
+	    </div>
+        
+	  <div class='pull-right'>
+      <input type="submit" id="btnsubmit" value="Continue!" class='btn btn-primary' />
+      <a data-transition='slidedown' id="btnshipping" href='#payment'></a>
+      </div>
+      	
+	 </form>	
+	</div>
+</div><!-- checkout -->
+
+
+<div data-role="page" id="payment">
+	<div data-role="content">
+    <h2>PAYMENT DETAILS</h2>
+    
+      <label for="textinput" id="amountdue"></label>
+     
+     <div class="instruction_summary">
+    <div id="instruction_summary"><span>Send M-PESA <label class="amountdue"></label></span> to Pay Bill Business number <span>00000</span>. Submit the <span>Confirmation Code</span> below.</div>
+    <div id="instruction_details"><ol><li>Go to M-PESA on your phone</li><li>Select Pay Bill option</li><li>Enter Business no. <span>00000</span></li><li>Account no. ORD<label class="ordno"></label></li><li>Enter the Amount <span><label  class="amountdue"></label></span></li><li>Enter your M-PESA PIN and Send</li><li>You will receive a confirmation SMS from M-PESA with a Confirmation Code</li><li>After you receive the confirmation SMS, enter your phone number and the Confirmation Code</li><li>Click on Complete</li></ol></div>
+</div>
+     
+     <form id="frmpayments">
+	  <div data-role="fieldcontain">
+	    <label for="textinput">M-Pesa mobile number:</label>
+	    <input type="text" name="mpesaphone" id="textinput" value=""  required />
+      </div>
+	  <div data-role="fieldcontain">
+	    <label for="textinput2">M-Pesa Confirmation Code:</label>
+	    <input type="text" name="confirmationcode" id="textinput2" value="" required />
+        <input type="hidden" class="ordno" name="orderid" id="textinput2" />
+        
+      </div>
+	 
+	  <div class='pull-right'>
+      <a id="btnpayment" href='#payment'></a>
+     <input type="submit" id="btnsubmit2" value="Complete!" class='btn btn-primary' />
+      <a data-transition='slidedown' class="hidden btnthankyou" id="btnpayment" href='#thankyou' class='btn btn-primary'></a>
+      
+      </div>
+      	
+	 </form>	
+	</div>
+</div><!-- payment -->
+
+
+
+<div data-role="page" id="thankyou">
+	<div data-role="content">
+    <h2>Thank you</h2>
+    <p>Your order has been successfully placed</p>
+    <p>Your Order number is <strong><label class="ordno"></label></strong> </p>
+    </div>
+</div>
+<div data-role="page" id="register">
+  <div data-role="content">
+  <form id="frmRegister">
+    <div data-role="fieldcontain">
+      <label for="textinput3">First Name:</label>
+      <input type="text" name="firstname" id="textinput3" value=""  required />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="textinput4">Other Names:</label>
+      <input type="text" name="othernames" id="textinput4" value="" required  />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="textinput5">Email:</label>
+      <input type="text" name="email" id="textinput5" value="" required />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="textinput6">Phone:</label>
+      <input type="text" name="phone" id="textinput6" value="" required />
+      <input name="cust_id" id="customer_id" class="cust_id"  value="" type="hidden">
+    </div>
+    
+     <div class='pull-right'>
+      <a id="btnpayment" href='#payment'></a>
+     <input type="submit" id="btnsubmitreg" value="Register!" class='btn btn-primary' />
+       <a data-transition="slidedown" href="#page" class="hidden btnthankyou" id="btnpayment"></a>
+       <a data-transition="slidedown" href="#register" class="hidden btnregister" id="btnpayment"></a>
+      </div>
+    
+  
+  </form>
+  </div>
+</div><!-- register -->
+<div data-role="page" id="gateway">
+  
+</div>
+
+
+
+
+</div> <!-- container -->
+
+<script type="text/javascript">
+$(function() {
+	$( "#Dialog1" ).dialog({
+		title:"Information",
+		hide:{effect: "slide"},
+		show:{effect: "puff"},
+		autoOpen:false
+	});
+	$( "#DialogTrigger" ).click(function(){
+ 		$( "#Dialog1" ).dialog("open");
+	});
+});
+</script>
 <a class="lnkgateway hidden" data-transition="slidedown" href="#gateway"></a>
 <button type="button" id="DialogTrigger" data-loading-text="Loading..." class="hidden"></button>
 <input type="hidden" id="rooturl" value="http://kendevs.com/deliva/" />
