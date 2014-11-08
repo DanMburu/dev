@@ -25,7 +25,7 @@ function onDeviceReady() {
    // else
    // db.transaction(populateDB, transaction_error, populateDB_success);
 	alert('ready');	
-    uuid=device.uuid;
+   var uuid=device.uuid;
 	alert('two');
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
 	alert(uuid);
