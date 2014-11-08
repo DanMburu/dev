@@ -17,15 +17,16 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 
-alert('ready');
+
    // db = window.openDatabase("EmployeeDirectoryDB", "1.0", "PhoneGap Demo", 200000);
    // if (dbCreated){
    // 	db.transaction(getEmployees, transaction_error);
 	//}
    // else
    // db.transaction(populateDB, transaction_error, populateDB_success);
-		
+	alert('ready');	
     uuid=device.uuid;
+	alert('two');
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
 	alert(uuid);
 	alert($('.shoppingcart').attr('href'));
