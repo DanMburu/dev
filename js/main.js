@@ -60,8 +60,7 @@ $(document).ready(function(e){
 	
 
 });
-function load(url){
-	alert(url);
+function load(url){	
 	//$("#results").fadeOut(100);
 	$('.overlay').show();
 	//$('#productlist').fadeOut();
@@ -74,8 +73,7 @@ function load(url){
 		success: function(data){
 		}
 	}).done(function(data, textStatus, jqXHR){
-		$("#results").html(data);
-		  alert(data);
+		$("#results").html(data);		
 		//$("#results").fadeIn(2000);
 		//$('.productcont').hide();
 		//setTimeout(function(){

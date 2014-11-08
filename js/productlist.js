@@ -17,6 +17,7 @@ function onDeviceReady() {
     db.transaction(populateDB, transaction_error, populateDB_success);
 		
    // uuid=device.uuid;
+   alert(device.uuid);
    uuid='645454';
 	$('.shoppingcart').attr('href',$('#rooturl').val()+'cart.aspx?cust_id='+uuid);
 	$('.cust_id').val(uuid);
@@ -81,7 +82,7 @@ function registration_error(tx, error) {
 function check_success(tx, results) {
 	 var len = results.rows.length;
 	 if(len==0){
-		//$('#top').hide();
+		$('#top').hide();
 		$('.lnkgateway').click(); 
 	 }else{
 		 $('#top').slideDown();
