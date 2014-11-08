@@ -17,7 +17,6 @@ $(document).ready(function(e){
 	$('#button-cart').on('click', function() {
 		 $("#results").html('');
 		 var url=$('#rooturl').val()+'add.aspx?'+$("#frmProduct" ).serialize();
-		 alert(url);
 		$.get( url, function( data ) {
 		 $('#Dialog1').html(data);
 		 $('#DialogTrigger').click();

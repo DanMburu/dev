@@ -196,4 +196,18 @@ hr{
 	clear:left;
 }
 #top{display:none;}
+.ui-draggable .ui-dialog-titlebar {
+  background: none repeat scroll 0 0 #9ba238;
+  cursor: move;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border-bottom-left-radius: 0 !important;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  border-bottom-right-radius: 0 !important;
+}
+.ui-dialog {
+  border: none !important;
+  
+}
 
