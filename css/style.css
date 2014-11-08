@@ -102,9 +102,13 @@ margin-left: 5%;
 }
 .ui-br{border:none}
 #Dialog1{background:#FFFFFF;display:none}
-input.ui-input-text,textarea.ui-input-text{
+input.ui-input-text{
 	background: none;
 border: none;
+}
+input.ui-input-text,textarea.ui-input-text{
+	background: none;
+
 }
 .dateseparator {
   float: left;
