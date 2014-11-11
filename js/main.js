@@ -3,7 +3,7 @@ $(document).ready(function(e){
   // $("#results").html('');
       
 	  
-	   $('.shoppingcart').on('click', function(e){
+	   $('.shoppingcart--').on('click', function(e){
 		 
 		   $('.loader').fadeIn();
 				load($(this).attr('href'));
@@ -14,7 +14,8 @@ $(document).ready(function(e){
 		//alert('done');
 	},3000);
 	
-	$('#button-cart').on('click', function() {
+	$('#button-cart--').on('click', function() {
+		alert('here');
 		 $("#results").html('');
 		 var url=$('#rooturl').val()+'add.aspx?'+$("#frmProduct" ).serialize();
 		$.get( url, function( data ) {
@@ -48,8 +49,6 @@ $(document).ready(function(e){
 		    $("#frmpayments").trigger('reset');
 			$("#results").html('<p>Your cart is empty</p>');
 		});
-		
-		 console.log(url);
 	});
 	$('#frmRegister').submit(function(e) {
 		var count=0;

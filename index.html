@@ -29,7 +29,7 @@
     <div class="loader">
         <img src="images/ajaxloader.gif" />
         <label style="font-size: 16px;font-weight: bold;overflow: hidden;position: relative;top:10px;width: 80px;;">
-            Loading
+            In a sec!
         </label>
     </div>
  </div> <!-- overlay -->
@@ -245,7 +245,7 @@
      <div class='pull-right'>
       <a id="btnpayment" href='#payment'></a>
      <input type="submit" id="btnsubmitreg" value="Register!" class='btn btn-primary' />
-       <a data-transition="slidedown" href="#page" class="hidden btnthankyou" id="btnpayment"></a>
+      
        <a data-transition="slidedown" href="#register" class="hidden btnregister" id="btnpayment"></a>
       </div>
     
@@ -307,7 +307,10 @@ $(function() {
 </script>
 <a class="lnkgateway hidden" data-transition="slidedown" href="#gateway"></a>
 <button type="button" id="DialogTrigger" data-loading-text="Loading..." class="hidden"></button>
-<input type="hidden" id="rooturl" value="http://kendevs.com/deliva/" />
+<input type="hidden" id="rooturl" value="http://kendevs.com/deliva/" rel="http://localhost/deliva/" />
+
+<a data-transition='slidedown' id="lnkcheckout" href='#checkout' class='hidden'></a>
+<label class="amountdue hidden"></label>
 </body>
 
 
